@@ -3,7 +3,7 @@ FROM rust:1.81
 # Install common packages
 RUN apt update \
     && apt upgrade -y \
-    && apt install -y curl git \
+    && apt install -y curl git pipx \
     && apt autoremove \
     && apt-get clean
 
@@ -31,5 +31,6 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 # Make ZSH the default shell
 RUN usermod -s $(which zsh) root
 
-# Install and configure Commitizen and iPython
-# RUN pip3 install --no-cache-dir -U commitizen ipython
+# Install and configure Commitizen
+RUN pipx install commitizen \
+    && pipx ensurepath
