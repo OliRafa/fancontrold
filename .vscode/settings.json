@@ -1,0 +1,8 @@
+{
+    "editor.bracketPairColorization.enabled": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "rust": "IGNORE_CASE=1 cargo run -- to poem.txt",
+    }
+}
